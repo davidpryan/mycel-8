@@ -1,0 +1,71 @@
+# MYCEL-8 in the host simulator: ./build.sh --host
+wait 600
+expect page 0
+expect part 3
+expect steps 16
+expect pulses 7
+# PLAY: the kick (part 1, drums on channel 10) on the first step
+tap PLAY
+wait 40
+expect playing 1
+expect_out USB 99 24 78
+wait 1500
+# part 4's pool: degrees 1 3 5 (bits 0 2 4); white key 2 adds degree 2
+expect pool 21
+tapkey w1
+wait 20
+expect pool 23
+# K2 turns pulses
+turn K2 2
+wait 20
+expect pulses 9
+# black key 1 selects part 1; GLO held + black key 2 mutes part 2
+tapkey b0
+wait 20
+expect part 0
+press GLO
+tapkey b1
+release GLO
+wait 20
+turn ALGO 1
+wait 20
+expect part 1
+expect muted 1
+# dice changes the register; PRESETS left brings the old one back
+turn ALGO 2
+wait 20
+expect part 3
+tap FX
+wait 20
+tap ARP
+wait 20
+turn PRESET -1
+wait 20
+expect reg_is_kept 1
+# FX locked it (no drift while checking)
+expect lock 1
+# SEL held + white key 3: the root is D
+press SEL
+tapkey w2
+release SEL
+wait 20
+expect root 2
+# a snapshot: SAVE held + white 2 keeps one, HOME held + white 1 cues snapshot 1 at the bar
+press SAVE
+tapkey w1
+release SAVE
+wait 20
+press HOME
+tapkey w0
+release HOME
+wait 20
+expect snapcue 0
+wait 2200
+expect snapcue -1
+tap PLAY
+wait 40
+expect playing 0
+press ARP
+wait 1200
+expect card 8
+release ARP

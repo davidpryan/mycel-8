@@ -1,0 +1,26 @@
+# MYCEL-8's build settings (fm1-base tools/build.py)
+name = "MYCEL-8"
+id_prefix = "FM-1_22"          # dev FM-1_2200, releases FM-1_22XXYYZZ
+usb_manufacturer = "MYCEL-8"
+usb_product = "MYCEL-8 FM-1"
+words = "words.tsv"
+o2 = []
+ble = true
+ble_stack = "own"
+ble_pairing = true
+ble_central = true
+usb_host = false
+usb_audio_in = false
+usb_audio_out = false
+midi_stamp = false
+emu = ["midi"]
+tagline = "eight generative parts: Euclid rhythms, Turing pitch"
+repo = "https://github.com/davidpryan/mycel-8"
+licence = "MPL-2.0"
+credits = "Built on fm1-base and felucca-bsp, from Felucca by Leo Kuroshita (Hügelton Instruments). After the Music Thing Turing Machine, Euclidean rhythms (Toussaint) and the Torso T-1. Fonts: Barlow (SIL OFL 1.1)."
+author = "David Ryan"
+description = "MYCEL-8 grows music from a few numbers. Eight parts each have a Euclidean rhythm (steps, pulses, rotate, division) and a Turing-machine shift register that picks notes from a pool of scale degrees chosen on the white keys: locked it loops, unlocked it drifts. Chance, accents, ratchets, a density and tide macro, dice with a history to go back to, a lock, and eight snapshots recalled at the bar. Its own synth and drums, and MIDI out over USB and Bluetooth."
+tags = ["sequencer", "generative", "synth", "midi"]
+install = "https://davidpryan.github.io/mycel-8/install/"
+site = "https://davidpryan.github.io/mycel-8/"
+screenshot = "app/docs/img/screen-field.png"
