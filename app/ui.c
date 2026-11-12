@@ -51,6 +51,12 @@ static const char *const CARD_TEXT[NB] = {
 #endif
 };
 
+static const char *const HINTS[NB] = {
+    [B_GLO] = "BLACK 1-8: MUTE PARTS", [B_HOME] = "WHITE 1-8: SNAPSHOT AT THE BAR",
+    [B_SAVE] = "WHITE 1-8: KEEP A SNAPSHOT", [B_SEL] = "WHITE 1-12: ROOT  PRESETS: SCALE",
+    [B_LFO] = "DENSER WHILE HELD",
+};
+
 static void dirty(void) { U.dirty = 1; }
 static part_t *pt(void) { return &P.part[U.part % NTRK]; }
 static void settings_save(void) { plat_store_save(OBJ_SETTINGS, &set, sizeof set); }
@@ -464,6 +470,7 @@ static void draw(void)
                                                  {"CHANCE", "ACCENT", "GATE", "RATCHET"}, {"CUTOFF", "DECAY", "ECHO", "WAVE"}};
         kit_knobs(KN[U.page][0], KN[U.page][1], KN[U.page][2], KN[U.page][3], PART_C[U.part % NTRK]);
     }
+    kit_hint(HINTS, ACCENT);
 }
 
 static void lights(void)
