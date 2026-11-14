@@ -98,3 +98,5 @@ from the simulator. Nothing has been run on a real FM-1 yet; CPU load of the syn
 ## Licence
 
 MPL-2.0, as fm1-base. After the Music Thing Modular Turing Machine (Tom Whitwell), Godfried Toussaint's Euclidean rhythms and the Torso T-1.
+
+You can also try Mycel 8 in the browser, no flashing needed, in the free community [FM-1 Emulator](https://fm1-emulator.atst.tools/).
